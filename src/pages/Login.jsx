@@ -12,12 +12,19 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    try {
+    console.log('Submitting login form...');
+    console.log('Email:', email);
+    console.log('Password:', password);
+
+
+    try { 
       const response = await fetch('https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       })
+
+      console.log('Response received:', response);
 
       const data = await response.json()
 
