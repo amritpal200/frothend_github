@@ -1,0 +1,126 @@
+
+.model-details-container {
+  padding: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text);
+}
+
+.model-info-box {
+  background-color: #1b1f36;
+  border-left: 4px solid var(--primary);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.model-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.model-buttons button {
+  padding: 10px 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.train-btn {
+  background-color: var(--primary);
+  color: #000;
+}
+
+.train-btn:hover {
+  background-color: var(--secondary);
+}
+
+.translate-btn {
+  background-color: #2d355b;
+  color: #fff;
+  border: 1px solid var(--primary);
+}
+
+.translate-btn:hover {
+  background-color: #3a4374;
+}
+
+.translated-section {
+  margin-top: 2rem;
+}
+
+.translated-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.translated-section li {
+  padding: 6px 0;
+  border-bottom: 1px solid #2b2f4a;
+}
+
+.doc-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.doc-link:hover {
+  text-decoration: underline;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 9, 26, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #0b1126;
+  border: 2px solid #06e3f6;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 420px;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.modal-buttons button {
+  background-color: #06e3f6;
+  color: #06091a;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  margin: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modal-buttons button:hover {
+  background-color: #049dc7;
+}
+
+.custom-progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #1f233e;
+  border-radius: 4px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--primary);
+  transition: width 0.3s ease-in-out;
+}

@@ -1,0 +1,81 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--bg-color);
+  padding: 20px;
+  position: relative;
+}
+
+.logo-wrapper {
+  margin-bottom: -60px; /* Pull logo over the box */
+  z-index: 2;
+}
+
+.logo-large {
+  width: 160px;
+  height: auto;
+  border-radius: 50%; /* optional, in case the logo has corners */
+  box-shadow: 0 0 30px rgba(6, 227, 246, 0.2);
+}
+
+.login-card {
+  background-color: #101325;
+  padding: 40px;
+  padding-top: 80px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(6, 227, 246, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  z-index: 1;
+  position: relative;
+}
+
+.login-card h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-form input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #1b1f36;
+  color: white;
+  font-size: 1rem;
+}
+
+.login-form input::placeholder {
+  color: #aaa;
+}
+
+.login-form button {
+  background-color: var(--primary);
+  color: #000;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-form button:hover {
+  background-color: var(--secondary);
+}
+
+.error-msg {
+  color: #ff4f4f;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
