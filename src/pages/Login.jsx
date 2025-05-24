@@ -29,7 +29,9 @@ function Login() {
         setError(data.message)
       }
     } catch (err) {
+      console.error('Login error:', err); 
       setError('Server error')
+      setError(err)
     }
   }
 
