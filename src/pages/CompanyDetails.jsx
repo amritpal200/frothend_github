@@ -11,7 +11,7 @@ function CompanyDetails() {
   const [baseModel, setBaseModel] = useState('')
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/company/${name}/models`)
+    fetch(`https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/companydetails/${name}`)
       .then(res => res.json())
       .then(data => {
         if (data.success) setModels(data.models)
@@ -26,8 +26,9 @@ function CompanyDetails() {
 
   const handleNewModelSubmit = (e) => {
     e.preventDefault()
+    // https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/companydetails${name}
 
-    fetch(`http://localhost:5000/api/company/${name}/models`, {
+    fetch(`https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/companydetails/${name}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

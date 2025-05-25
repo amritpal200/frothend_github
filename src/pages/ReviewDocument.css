@@ -85,6 +85,9 @@
 .finalize-review {
   margin-top: 2rem;
   text-align: right;
+  display: flex;
+  gap: 1rem; /* This adds spacing between buttons */
+  justify-content: right; /* Optional: centers buttons */
 }
 
 .export-btn {

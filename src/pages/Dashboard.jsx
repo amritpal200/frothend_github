@@ -75,14 +75,7 @@ function Dashboard() {
         ))}
       </div>
 
-      <section className="dashboard-section">
-        <h2>Recent Activity</h2>
-        <ul className="activity-list">
-          {recentActivities.map((activity, idx) => (
-            <li key={idx}>{activity}</li>
-          ))}
-        </ul>
-      </section>
+    
     </div>
   )
 }

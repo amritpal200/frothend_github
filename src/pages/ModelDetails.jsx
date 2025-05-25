@@ -30,12 +30,7 @@ function TrainModelModal({ isOpen, onClose, onUpload }) {
         />
         {file.length > 0 && (
           <div>
-            <p>Selected files:</p>
-            <ul>
-              {file.map((f, idx) => (
-                <li key={idx}>{f.name}</li>
-              ))}
-            </ul>
+            <p>Files has been selected.</p>
           </div>
         )}
         <div className="modal-buttons">
@@ -123,6 +118,7 @@ function ModelDetails() {
     formData.append('model_name', model);
     formData.append('company_name', company);
     formData.append('uploaded_by', localStorage.getItem('userId'));
+    formData.append('base_model', modelInfo.baseModel);
 
     fetch('http://localhost:5000/api/train-model', {
       method: 'POST',
@@ -145,6 +141,8 @@ function ModelDetails() {
     formData.append('company_name', company);
     formData.append('model_id', modelInfo.id);
     formData.append('user_id', localStorage.getItem('userId'));
+    formData.append('base_model', modelInfo.baseModel);
+    console.log("modelInfo before upload:", modelInfo);
 
     fetch('http://localhost:5000/api/documents', {
       method: 'POST',
@@ -178,7 +176,11 @@ function ModelDetails() {
 
       <div className="model-info-box">
         <p><strong>Base Model:</strong> {modelInfo.baseModel}</p>
-        <p><strong>Status:</strong> {modelInfo.status}</p>
+        <p><strong>Status:</strong>{' '}
+          <span className={`status-label ${modelInfo.status.toLowerCase()}`}>
+            {modelInfo.status}
+          </span>
+        </p>
         <p><strong>Created:</strong> {modelInfo.created}</p>
         <p><strong>Last Trained:</strong> {modelInfo.performance?.lastTrained || 'N/A'}</p>
         <p><strong>BLEU Score:</strong> {modelInfo.performance?.bleuScore || 'N/A'}</p>
@@ -198,17 +200,16 @@ function ModelDetails() {
           onUpload={handleDocumentUpload}
         />
       </div>
-
       <section className="translated-section">
         <h2>Translated Documents</h2>
         <ul>
           {modelInfo.documents.map((doc, idx) => (
             <li key={idx}>
               <Link
-                to={`http://localhost:5000/company/${company}/model/${model}/document/${encodeURIComponent(doc)}`}
+                to={`/company/${company}/model/${model}/document/${doc.id}`}
                 className="doc-link"
               >
-                📄 {doc}
+                📄 {doc.name}
               </Link>
             </li>
           ))}
