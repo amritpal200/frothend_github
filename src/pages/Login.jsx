@@ -28,10 +28,14 @@ function Login() {
 
       const data = await response.json()
 
+      console.log('Raw response json:', text);
+
       if (data.success) {
         // Optionally store user in state or context
         localStorage.setItem('userId', data.user.id)
+        console.log('navigating to dashboard');
         navigate('/dashboard')
+        console.log('Login successful, user ID:', data.user.id);
       } else {
         setError(data.message)
       }
