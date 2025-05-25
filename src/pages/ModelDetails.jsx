@@ -144,7 +144,7 @@ function ModelDetails() {
     formData.append('base_model', modelInfo.baseModel);
     console.log("modelInfo before upload:", modelInfo);
 
-    fetch('http://localhost:5000/api/documents', {
+    fetch('https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/modeldetail', {
       method: 'POST',
       body: formData,
     })
@@ -159,9 +159,10 @@ function ModelDetails() {
         console.error('Error uploading document:', err);
       });
   };
-
+  // https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/companydetails/${name}
+  // https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/modeldetail/{company}/model/{model}
   useEffect(() => {
-    fetch(`http://localhost:5000/api/company/${company}/model/${model}`)
+    fetch(`https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/modeldetail/{company}/model/{model}`)
       .then((res) => res.json())
       .then((data) => setModelInfo(data))
       .catch((err) => console.error('Error fetching model info:', err));
@@ -182,8 +183,6 @@ function ModelDetails() {
           </span>
         </p>
         <p><strong>Created:</strong> {modelInfo.created}</p>
-        <p><strong>Last Trained:</strong> {modelInfo.performance?.lastTrained || 'N/A'}</p>
-        <p><strong>BLEU Score:</strong> {modelInfo.performance?.bleuScore || 'N/A'}</p>
       </div>
 
       <div className="model-buttons">
