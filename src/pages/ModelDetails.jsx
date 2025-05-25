@@ -162,7 +162,7 @@ function ModelDetails() {
   // https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/companydetails/${name}
   // https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/modeldetail/{company}/model/{model}
   useEffect(() => {
-    fetch(`https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/modeldetail/{company}/model/{model}`)
+    fetch(`https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/modeldetail/${company}/model/${model}`)
       .then((res) => res.json())
       .then((data) => setModelInfo(data))
       .catch((err) => console.error('Error fetching model info:', err));
