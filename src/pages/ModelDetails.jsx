@@ -178,7 +178,7 @@ function ModelDetails() {
       <div className="model-info-box">
         <p><strong>Base Model:</strong> {modelInfo.baseModel}</p>
         <p><strong>Status:</strong>{' '}
-          <span className={`status-label ${modelInfo.status.toLowerCase()}`}>
+          <span className={`status-label ${modelInfo.status}`}> 
             {modelInfo.status}
           </span>
         </p>
