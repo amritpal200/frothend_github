@@ -28,7 +28,7 @@ function Login() {
 
       const data = await response.json()
 
-      console.log('Raw response json:', text);
+      console.log('Raw response json:', data);
 
       if (data.success) {
         // Optionally store user in state or context
