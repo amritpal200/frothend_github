@@ -26,9 +26,22 @@ function Login() {
 
       console.log('Response received:', response);
 
-      const data = await response.json()
+      // const data = await response.json()
 
-      console.log('Raw response json:', data);
+      // console.log('Raw response json:', data);
+
+      const rawData = await response.json();
+      console.log('Raw response json:', rawData);
+
+      let data;
+      try {
+        data = typeof rawData.body === 'string' ? JSON.parse(rawData.body) : rawData.body;
+        console.log('Final parsed login data:', data);
+      } catch (err) {
+        console.error('Failed to parse body:', err);
+        setError('Invalid server response');
+        return;
+      }
 
       if (data.success) {
         // Optionally store user in state or context
