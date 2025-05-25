@@ -112,7 +112,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        'https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend',
+        'https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/login',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

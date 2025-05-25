@@ -9,7 +9,7 @@ function Dashboard() {
 
   const fetchCompanies = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/companies')
+      const response = await fetch('https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/dashboard')
       const data = await response.json()
       if (data.success) {
         setCompanies(data.companies)
@@ -34,7 +34,7 @@ function Dashboard() {
     const userId = localStorage.getItem('userId') // stored during login
 
     try {
-        const response = await fetch('http://localhost:5000/api/companies', {
+        const response = await fetch('https://gslusqinof.execute-api.us-east-1.amazonaws.com/1/backend/dashboard', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, user_id: userId })
